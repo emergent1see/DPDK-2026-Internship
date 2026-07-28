@@ -1,4 +1,4 @@
-# Setting Up DPDK in a VM: My Journey
+# Setting Up DPDK in a VM
 
 This is a record of how I set up a complete DPDK development environment inside a VirtualBox virtual machine, wrote a custom packet capture application, and got real traffic flowing between my Windows host and the VM. I ran into a good number of real problems along the way, and I'm documenting them here exactly as I hit them, along with how I fixed each one, in case it saves someone else the same hours I spent.
 
