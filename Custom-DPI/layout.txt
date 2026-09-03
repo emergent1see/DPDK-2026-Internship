@@ -1,0 +1,57 @@
+router_http_mutate.c
+│
+├── HEADERS
+│   ├── Standard C headers
+│   └── DPDK headers
+│
+├── DEFINES
+│   ├── RX_RING_SIZE, TX_RING_SIZE
+│   ├── NUM_MBUFS, MBUF_CACHE_SIZE
+│   ├── BURST_SIZE, ARP_TABLE_SIZE
+│   └── PORT_VM2, PORT_VM1
+│
+├── STRUCTURES
+│   ├── iface_cfg (interface configuration)
+│   └── arp_entry (ARP cache)
+│
+├── GLOBALS
+│   ├── ifaces[2], arp_table[2][32]
+│   ├── mbuf_pool, running, default_gw_ip
+│   └── g_verbose
+│
+├── UTILITY FUNCTIONS
+│   ├── ip_from_str(), ip_to_str()
+│   ├── mac_to_str(), idx_of()
+│   └── signal_handler()
+│
+├── HTTP DETECTION
+│   ├── match_http_request()
+│   └── match_http_response()
+│
+├── ARP FUNCTIONS
+│   ├── arp_learn(), arp_lookup()
+│   ├── send_arp_request()
+│   └── handle_arp()
+│
+├── ICMP FUNCTIONS
+│   └── send_icmp_echo_reply()
+│
+├── IP FUNCTIONS
+│   ├── handle_ipv4()
+│   ├── print_ip_header()
+│   └── log_http_mutation()
+│
+├── PORT FUNCTIONS
+│   ├── init_port()
+│   └── process_port()
+│
+└── MAIN
+    ├── Signal registration
+    ├── EAL initialization
+    ├── Port count check
+    ├── Memory pool creation
+    ├── Port initialization
+    ├── Interface configuration
+    ├── Startup display
+    ├── Main processing loop
+    └── Cleanup
